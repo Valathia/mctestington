@@ -1,22 +1,334 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-    <title>metadatalol</title>
-    <link rel='stylesheet' href='Resources/CSS/index.css' type='text/css'>
+    <title>CSS Cheatsheet</title>
+    <link href='styles.css' rel='stylesheet' type='text/CSS'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Roboto:ital@0;1&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <h1>CSS Cheatsheet</h1>
 
-    <h1>Valathia</h1>
+    <div class="table1">
+        <h2>Attribute Selectors</h2>
 
-    <p>I'm learning to code on Codecademy! My goals include:</p>
-    <ul>
-      <li>Learn to code</li>
-      <li>Start a company</li>
-      <li>Help the world</li>
-    </ul>
-    <p><img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" /></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Selector</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+
+            </thead>
+            <tbody>
+
+                <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                    <th class='col1'> [] </th>
+                    <td> <span> Existence </span> <br> Matches a specific attribute (whatever it's value)</td>
+                    <td> <span class='example'>p[class]</span> <br> Targets any <span class='example'>&lt;p&gt;</span> element with an attribute called class </td>
+                </tr>
+                <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                    <th class='col1'> [-] </th>
+                    <td> <span> Equality </span> <br> Matches a specific attribute with a specific value</td>
+                    <td> <span class='example'> p[class='dog'] </span> <br> targets any  <span class='example'>&lt;p&gt;</span> element with an attribute called class whose value is dog </td>
+                </tr>
+                <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                    <th class='col1'> [~=] </th>
+                    <td> <span> Space </span> <br> Matches a specific attribute whose value appears in a space-separated list of words</td>
+                    <td> <span class='example'> p[class~='dog'] </span> <br> Targets any <span class='example'>&lt;p&gt;</span> element with an attribute called class whose value is a list of space-separated words, one of which is dog </td>
+                </tr>
+                <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                    <th class='col1'> [^=] </th>
+                    <td> <span> Prefix </span> <br> Matches a specific attribute whose value begins with a specific string </td>
+                    <td> <span class='example'> p[attr^'d'] </span> <br> Targets any <span class='example'>&lt;p&gt;</span> element with an attribute whose value begins with the letter 'd' </td>
+                </tr>
+                <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                    <th class='col1'> [*=] </th>
+                    <td> <span> Substring </span> <br> Matches a specific attribute whose value contains a specific substring </td>
+                    <td> <span class='example'> p[attr*'do'] </span> <br> Targets any <span class='example'>&lt;p&gt;</span> element with an attribute whose value contains the letters 'do' </td>
+                </tr>
+                <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                    <th class='col1'> [$=] </th>
+                    <td> <span> Suffix </span> <br> Matches a specific attribute whose value ends with a specific string</td>
+                    <td> <span class='example'> p[attr$'g'] </span> <br> Targets any <span class='example'>&lt;p&gt;</span> element with an attribute whose value ends with the letter 'g' </td>
+                </tr>
+
+            </tbody>
+            <caption>Table taken from "Html and CSS" by Jon Duckett page 292</caption>
+        </table>
+    </div>
+
+    <div class="tablecontainer">
+        <div class="table2">
+            <br>
+            <h2>Pseudo-Classes</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Selector</th>
+                        <th>Example</th>
+                        <th>Description</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :active </th>
+                        <td> <span class='example'> a:active </span> </td>
+                        <td> Selects the active link </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :checked </th>
+                        <td> <span class='example'> input:checked </span> </td>
+                        <td> Selects every checked <span class='example'>&lt;input&gt;</span> element </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :disabled </th>
+                        <td> <span class='example'> input:disabled </span> </td>
+                        <td> Selects every disabled <span class='example'>&lt;input&gt;</span> element </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :empty </th>
+                        <td> <span class='example'> p:empty </span> </td>
+                        <td> Selects every <span class='example'>&lt;p&gt;</span>  element that has no children </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :enabled </th>
+                        <td> <span class='example'> input:enabled </span> </td>
+                        <td> Selects every enabled <span class='example'>&lt;input&gt;</span> element </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :first-child </th>
+                        <td> <span class='example'> p:first-child </span> </td>
+                        <td> Selects every <span class='example'>&lt;p&gt;</span> elements that is the first child of its parent </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :first-of-type </th>
+                        <td> <span class='example'> p:first-of-type </span> </td>
+                        <td> Selects every <span class='example'>&lt;p&gt;</span> element that is the first <span class='example'>&lt;p&gt;</span> element of its parent </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :focus </th>
+                        <td> <span class='example'> input:focus </span> </td>
+                        <td> Selects the <span class='example'>&lt;input&gt;</span> element that has focus </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :hover </th>
+                        <td> <span class='example'> a:hover </span> </td>
+                        <td> Selects links on mouse over </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :in-range </th>
+                        <td> <span class='example'> input:in-range </span> </td>
+                        <td> Selects <span class='example'>&lt;input&gt;</span> elements with a value within a specified range </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :invalid </th>
+                        <td> <span class='example'> input:invalid </span> </td>
+                        <td> Selects all <span class='example'>&lt;input&gt;</span> elements with an invalid value </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :lang(language) </th>
+                        <td> <span class='example'> p:lang(it) </span> </td>
+                        <td> Selects every <span class='example'>&lt;p&gt;</span> element with a lang attribute value starting with "it" </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :last-child </th>
+                        <td> <span class='example'> p:last-child </span> </td>
+                        <td> Selects every <span class='example'>&lt;p&gt;</span>  elements that is the last child of its parent </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :last-of-type </th>
+                        <td> <span class='example'> p:last-of-type </span> </td>
+                        <td> Selects every <span class='example'>&lt;p&gt;</span> element that is the last <span class='example'>&lt;p&gt;</span> element of its parent </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :link </th>
+                        <td> <span class='example'> a:link </span> </td>
+                        <td> Selects all unvisited links </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :not(selector) </th>
+                        <td> <span class='example'> :not(p) </span> </td>
+                        <td> Selects every element that is not a <span class='example'>&lt;p&gt;</span> element </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :nth-child(n) </th>
+                        <td> <span class='example'>	p:nth-child(2) </span> </td>
+                        <td> Selects every <span class='example'>&lt;p&gt;</span> element that is the second child of its parent </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :nth-last-child(n) </th>
+                        <td> <span class='example'> p:nth-last-child(2) </span> </td>
+                        <td> Selects every <span class='example'>&lt;p&gt;</span> element that is the second child of its parent, counting from the last child </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :nth-last-of-type(n) </th>
+                        <td> <span class='example'> p:nth-last-of-type(2) </span> </td>
+                        <td> Selects every <span class='example'>&lt;p&gt;</span> element that is the second <span class='example'>&lt;p&gt;</span> element of its parent, counting from the last child </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :only-of-type </th>
+                        <td> <span class='example'> p:only-of-type </span> </td>
+                        <td> Selects every <span class='example'>&lt;p&gt;</span> element that is the only <span class='example'>&lt;p&gt;</span> element of its parent </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :optional </th>
+                        <td> <span class='example'> input:optional </span> </td>
+                        <td> Selects <span class='example'>&lt;input&gt;</span> elements with no "required" attribute </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :out-of-range </th>
+                        <td> <span class='example'> input:out-of-range </span> </td>
+                        <td> Selects <span class='example'>&lt;input&gt;</span> elements with a value outside a specified range </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :read-only </th>
+                        <td> <span class='example'> input:read-only </span> </td>
+                        <td> Selects <span class='example'>&lt;input&gt;</span> elements with a "readonly" attribute specified </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :read-write </th>
+                        <td> <span class='example'> input:read-write </span> </td>
+                        <td> Selects <span class='example'>&lt;input&gt;</span> elements with no "readonly" attribute </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :required </th>
+                        <td> <span class='example'> input:required </span> </td>
+                        <td> Selects <span class='example'>&lt;input&gt;</span> elements with a "required" attribute specified </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :root </th>
+                        <td> <span class='example'> root </span> </td>
+                        <td> Selects the document's root element </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :target </th>
+                        <td> <span class='example'> #news:target </span> </td>
+                        <td> Selects the current active #news element (clicked on a URL containing that anchor name) </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :valid </th>
+                        <td> <span class='example'> input:valid </span> </td>
+                        <td> Selects all <span class='example'>&lt;input&gt;</span> elements with a valid value </td>
+                    </tr>
+                    <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                        <th class='col1'> :visited </th>
+                        <td> <span class='example'> a:visited </span> </td>
+                        <td> Selects all visited links </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="smallercontainer">
+            <div class="table3">
+                <br>
+                <h2> Pseudo-Elements </h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Selector</th>
+                            <th>Example</th>
+                            <th>Description</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+
+                        <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                            <th class='col1'> ::after </th>
+                            <td> <span class='example'> p::after </span> </td>
+                            <td> Insert content after every <span class='example'>&lt;p&gt;</span> element </td>
+                        </tr>
+                        <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                            <th class='col1'> ::before </th>
+                            <td> <span class='example'> p::before </span> </td>
+                            <td> Insert content before every <span class='example'>&lt;p&gt;</span> element </td>
+                        </tr>
+                        <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                            <th class='col1'> ::first-letter </th>
+                            <td> <span class='example'> p::first-letter </span> </td>
+                            <td> Selects the first letter of every <span class='example'>&lt;p&gt;</span> element </td>
+                        </tr>
+                        <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                            <th class='col1'> ::first-line </th>
+                            <td> <span class='example'> p::first-line </span> </td>
+                            <td> Selects the first line of every <span class='example'>&lt;p&gt;</span> element </td>
+                        </tr>
+                        <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                            <th class='col1'> ::selection </th>
+                            <td> <span class='example'> p::selection </span> </td>
+                            <td> Selects the portion of an element that is selected by a user </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table4">
+                <br>
+                <h2>Link Pseudo-Classes (in Order)</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Selector</th>
+                            <th>Example</th>
+                            <th>Description</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+
+                        <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                            <th class='col1'> :link </th>
+                            <td> <span class='example'> a:link </span> </td>
+                            <td> Selects all unvisited links </td>
+                        </tr>
+                        <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                            <th class='col1'> :visited </th>
+                            <td> <span class='example'> a:visited </span> </td>
+                            <td> Selects all visited links </td>
+                        </tr>
+                        <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                            <th class='col1'> :hover </th>
+                            <td> <span class='example'> a:hover </span> </td>
+                            <td> Selects links on mouse over </td>
+                        </tr>
+                        <tr onmouseover="inIn(this)" onmouseout="inOut(this)" class='lol'>
+                            <th class='col1'> :active </th>
+                            <td> <span class='example'> a:active </span> </td>
+                            <td> Selects the active link </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<script>
+
+    function inIn(x) {
+        let mambo = x.children[0];
+        mambo.style.borderStyle = "inset";
+        mambo.style.borderLeftStyle = "solid";
+        mambo.style.boxShadow = "none"; 
+        mambo.style.backgroundColor = "ghostwhite";
+    };
+
+    function inOut(x) {
+        let meh = x.children[0];
+        meh.style.borderStyle = "none";
+        meh.style.borderLeftStyle = "none";
+        meh.style.boxShadow = "0.5px 0px 0px 0px rgba(0,0,0,0.72)";
+        meh.style.backgroundColor = "#b7ebe8";
+    }
+    
+</script>
 
 </body>
 </html>
